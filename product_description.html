@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css_files/p.css">
+  <link rel="stylesheet" href="css_files/style.css">
+</head>
+
+<body>
+  <nav>
+    <a href="#">logo</a>
+    <div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cart.html"><ion-icon name="bag-outline"></ion-icon></a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="product-content">
+  <div class="cart">
+    <div class="p-imgs">
+      <div class="img-d">
+        <div class="img-showcase">
+          <img src="images/f1.jpg" alt="">
+          <img src="images/f2.jpg"alt="">
+          <img src="images/f3.jpg" alt="">
+          <img src="images/f4.jpg" alt="">
+        </div>
+      </div>
+      <div class="img-select">
+        <div class="img-item">
+          <a href="#" data-id="1">
+            <img src="images/f1.jpg" alt="">
+          </a>
+        </div>
+        <div class="img-item">
+          <a href="#" data-id="2">
+            <img src="images/f2.jpg" alt="">
+          </a>
+        </div>
+        <div class="img-item">
+          <a href="#" data-id="3">
+            <img src="images/f3.jpg" alt="">
+          </a>
+        </div>
+        <div class="img-item">
+          <a href="#" data-id="4">
+            <img src="images/f4.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="details">
+      <h2 class="title">Cartoon Astrenout T-Shirt</h2>
+      <a href="#" class="p-link">VISIT NIKE STORE</a>
+      <div class="rating">
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+        <span>4.7(21)</span>
+      </div>
+      <p class="price">Price: <span>$9000</span></p>
+      <select name="" id="">
+        <option value="">Select Size</option>
+        <option value="">Small</option>
+        <option value="">Medium</option>
+        <option value="">Large</option>
+        <option value="">XL</option>
+        <option value="">XXL</option>
+        <option value="">XXXL</option>
+      </select>
+      <div class="product-details">
+        <div class="info">
+          <input type="number" value="1" min="0">
+          <button>Add to cart <ion-icon name="cart-outline"></ion-icon></button>
+        </div>
+        <h2>About This Item: </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat ducimusLorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat ducimu voluptatum, amet est natus quaerat ducimus</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const imgs = document.querySelectorAll(".img-select a");
+  let id = 1;
+  imgs.forEach((imgItem) => {
+    imgItem.addEventListener('click', (event) => {
+      event.preventDefault();
+      id = imgItem.dataset.id;
+      slideImage();
+    });
+  });
+  
+  function slideImage() {
+    const displayWidth = document.querySelector(".img-showcase img:first-child").clientWidth;
+    document.querySelector(".img-showcase").style.transform = `translateX(${-(id-1) * displayWidth}px)`;
+  }
+</script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
