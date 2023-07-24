@@ -27,6 +27,59 @@ nav {
   border-bottom: 1px solid #ddd; 
   padding: 1rem 100px; 
 }
+nav > div {
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0 30px;
+}
+nav a {
+  text-decoration: none;
+  color: var(--text-color); 
+  font-weight: 450; 
+  position: relative; 
+}
+nav .active {
+  position: relative;
+  color: var(--bg-color);
+}
+nav a.active::before {
+  content: "";
+  position: absolute;
+  background-color: var(--bg-color);
+  left: 0;
+  width: 20px;
+  height: 2px;
+  bottom: -5px;
+}
+nav a:hover {
+  color: var(--bg-color);
+}
+nav ion-icon {
+  position: relative;
+  font-size: 1.5rem;
+}
+nav .counter {
+  background-color: var(--bg-color);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  position: absolute; 
+  color: #fff;
+  top: 10px;
+  right: 90px; 
+}
+nav .bar {
+  display: none; 
+}
 .head h1 {
   text-align: center;
   font-size: 50px;
@@ -47,62 +100,6 @@ nav {
 .cartt {
   background: url(https://res.cloudinary.com/dz6atgbkh/image/upload/v1690017535/banner_sgbqwn.png);
   background-size: cover; 
-}
-nav a {
-  text-decoration: none;
-  color: var(--text-color); 
-  font-weight: 450; 
-}
-nav a:hover {
-  color: var(--bg-color);
-  position: relative; 
-}
-nav .active {
-  position: relative;
-}
-nav a::before {
-  content: "";
-  position: absolute;
-  background-color: var(--bg-color); 
-  left: 0;
-  width: 20px;
-  height: 2px; 
-  bottom: -5px; 
-}
-nav > div {
-  display: flex;
-  align-items: center; 
-}
-nav ul {
-  display: flex;
-  align-items: center; 
-  list-style: none; 
-  gap: 0 30px; 
-}
-.active {
-  color: var(--bg-color);
-}
-nav ion-icon {
-  position: relative; 
-  font-size: 1.5rem;
-}
-
-nav .counter {
-  background-color: var(--bg-color);
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-  position: absolute; 
-  color: var(--text-color);
-  top: 10px;
-  right: 90px; 
-}
-nav .bar {
-  display: none; 
 }
 .landing {
   background-image: url(https://res.cloudinary.com/dz6atgbkh/image/upload/v1690017529/hero4_lhso1r.png);
@@ -138,8 +135,6 @@ section.main .head {
 }
 .main h2 {
   color: black;
-}
-section h2 {
   text-align: center;
   font-size: 36px;
 }
@@ -148,7 +143,6 @@ section p {
   color: #777;
   margin: 5px 0 0; 
 }
-
 .products {
   padding: 30px 0;
   display: grid;
@@ -338,6 +332,7 @@ footer .contact .address {
 .install .apps {
   display: flex; 
   gap: 0 15px;  
+  flex-wrap: wrap; 
   margin-bottom: 20px; 
 }
 footer .copy-right {
@@ -358,9 +353,6 @@ footer .copy-right ion-icon {
 }
 
 @media (max-width: 767px) {
-  footer {
-    display: none; 
-  }
   nav {
     padding: 10px 20px; 
   }
@@ -385,6 +377,10 @@ footer .copy-right ion-icon {
   nav .bar {
     display: block;
   }
+  nav .counter {
+    left: 47px;
+    top: 177px;
+  }
   .landing {
     padding: 20px 30px;
     text-align: center; 
@@ -399,6 +395,15 @@ footer .copy-right ion-icon {
   .slider form input[type="submit"] {
     width: 30%; 
   } 
+  footer .content {
+  padding-inline: 30px; 
+  gap: 50px 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 25% 1fr 50px;
+  }
+  footer .about {
+    margin-right: 0; 
+  }
 }
 @media (min-width: 768px) and (max-width: 850px){
     .landing {
@@ -422,4 +427,10 @@ footer .copy-right ion-icon {
   .slider form input[type="submit"] {
     width: 30%; 
   } 
+   footer .content {
+     padding-inline: 30px;
+     gap: 50px 0;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 1fr 25% 50px;
+   }
 }
